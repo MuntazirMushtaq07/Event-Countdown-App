@@ -1,0 +1,211 @@
+/* Countdown.css */
+
+:root {
+  --bg-color: #f5f7fa;
+  --primary-color: #4f46e5;
+  --accent-color: #22d3ee;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --glass: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  min-height: 100vh;
+}
+
+.countdown-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffffd0;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+}
+
+.countdown-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  animation: slideDown 0.6s ease-out;
+}
+
+.countdown-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 1s ease 0.2s backwards;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.form-input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px #c7d2fe;
+}
+
+.submit-button {
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.submit-button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.divider {
+  margin: 30px 0;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #60a5fa, #4f46e5);
+  border-radius: 5px;
+  animation: fadeIn 1s ease;
+}
+
+.event-list-title {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  animation: fadeIn 1s ease 0.4s backwards;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 1s ease 0.5s backwards;
+}
+
+.event-card {
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: popIn 0.4s ease-in-out;
+  transition: 0.3s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.event-date {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.delete-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.delete-button:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.5);
+}
+
+.countdown-text {
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #10b981; /* Emerald green */
+  background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  text-shadow: 1px 1px 2px rgba(16, 185, 129, 0.2);
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  } to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
